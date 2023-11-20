@@ -15,7 +15,7 @@ Before running the application, ensure you have the following software installed
 Clone the repository:
 
 ```
-git clone https://github.com/Flaviojrr/Menu
+git clone https://github.com/armentanoc/restaurantMenuAndOrdersCRUD.git
 ```
 
 ## Setting up the database and tables
