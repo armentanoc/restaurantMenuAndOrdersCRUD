@@ -10,7 +10,12 @@
     <script src="script/MenuValidator.js"></script>
     <style>
         /* Add your CSS styles here */
-        @media only screen and (max-width: 900px) {
+        @media (max-width: 900px) {
+        
+        table {
+                width: 100%;
+                overflow-x: auto;
+            }
             /* Hide columns on smaller devices */
             .menu-table th:nth-child(1), .menu-table td:nth-child(1), .menu-table th:nth-child(3),
                 .menu-table td:nth-child(3), .menu-table th:nth-child(4), .menu-table td:nth-child(4),

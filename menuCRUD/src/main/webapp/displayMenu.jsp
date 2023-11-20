@@ -11,7 +11,7 @@
     <script src="script/MenuValidator.js"></script>
      <style>
         /* Additional styles for responsiveness */
-        @media (max-width: 600px) {
+        @media (max-width: 900px) {
             table {
                 width: 100%;
                 overflow-x: auto;
