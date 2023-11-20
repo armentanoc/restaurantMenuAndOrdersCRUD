@@ -2,7 +2,7 @@
 <%@ page
     import="java.util.List, model.Order, model.MenuItem, model.DAOMenuItem"%>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <title>Pedidos</title>
     <link rel="stylesheet" href="style.css">
