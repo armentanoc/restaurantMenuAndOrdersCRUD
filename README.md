@@ -1,5 +1,7 @@
 # Meal and Restaurant Orders CRUD Application 🍽️
 
+![GIT Restaurant Menu CRUD](https://github.com/armentanoc/restaurantMenuAndOrdersCRUD/assets/88147887/6eec41b2-aa37-4c80-81df-9e28071831f9)
+
 ## Overview
 This is a Java web application built with JSP (JavaServer Pages) for creating, updating, and deleting (CRUD) meals and restaurant orders. The project uses Apache Tomcat 9 as the web server and PostgreSQL as the embedded database.
 
