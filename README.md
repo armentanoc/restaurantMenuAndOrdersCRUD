@@ -5,27 +5,29 @@
 </p>
 
 ## Overview
-This is a Java web application built with JSP (JavaServer Pages) for creating, updating, and deleting (CRUD) meals and restaurant orders. The project uses Apache Tomcat 9 as the web server and PostgreSQL as the embedded database.
+
+Welcome to Villa Eleganza, a Java web application crafted with JSP (JavaServer Pages) that empowers you to manage meals and restaurant orders effortlessly. Whether you're creating, updating, or deleting (CRUD), this application provides a seamless experience. Powered by Apache Tomcat 9 and PostgreSQL, it's a delightful journey into the world of culinary simplicity.
 
 ## Requirements
-Before running the application, ensure you have the following software installed:
+
+Before indulging in the culinary adventure, make sure you have the following ingredients ready:
 
 * Java Development Kit (JDK) 8 or later
 * <a href="https://tomcat.apache.org/download-90.cgi">Apache Tomcat 9</a>
 * <a href="https://www.enterprisedb.com/downloads/postgres-postgresql-downloads"> PostgreSQL Database</a>
-  
+
 ## Getting Started
 
-Clone the repository:
+Clone the repository to kickstart your culinary journey:
 
 ```
 git clone https://github.com/armentanoc/restaurantMenuAndOrdersCRUD.git
 ```
 
-## Setting up the database and tables
+## Setting up the Database and Tables
 
 1. You need to create locally at PostgreSQL a database named `VillaEleganza`.
-2. Inside it, run the following script in Query Tool to create the `menu` and `orders` table: 
+2. Inside it, run the following script in Query Tool to create the `menu` and `orders` table:
 
 ```bash
 
@@ -69,11 +71,14 @@ EXECUTE FUNCTION update_updated_at();
 
 ```
 
-## Go to Eclipse IDE or similar
+## Eclipse IDE Configuration
 
-* We chose to use <a href="https://www.eclipse.org/downloads/packages/release/2023-09/r/eclipse-ide-enterprise-java-and-web-developers">Eclipse IDE for Enterprise Java and Web Developers</a> to make the project and tutorial.
+Fire up <a href="https://www.eclipse.org/downloads/packages/release/2023-09/r/eclipse-ide-enterprise-java-and-web-developers">Eclipse IDE for Enterprise Java and Web Developers</a> (or a similar tool) to orchestrate the project. Configure the server, set passwords, and unleash the power of Villa Eleganza in the palm of your hands.
 
-1. Configure the Server in Eclipse IDE >> Servers >> New Server >> Apache Tomcat v9.0 Server >> Browse extracted zip directory. 
-2. Alter the password in `DAOMenuItem.java` class as needed at your own machine 
+## How to Taste the Magic
+
+1. Configure the Server in Eclipse IDE >> Servers >> New Server >> Apache Tomcat v9.0 Server >> Browse extracted zip directory
+2. Alter the password in `DAOMenuItem.java` class as needed at your own machine
 3. Open `villaHome.jsp` with Apache Tomcat 9 server
-4. The CRUD in `menu` and `orders` should be working!
+4. The CRUD functionalities for both menu and orders are now at your fingertips
+5. Embark on this flavorful journey with Villa Eleganza – where every byte is a delicious bite! 🌮🍕🍰
