@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
-<%@ page
-    import="java.util.List, model.Order, model.MenuItem, model.DAOMenuItem"%>
+<%@ page import="java.util.List, model.Order, model.MenuItem, model.DAOMenuItem"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,10 +11,10 @@
         /* Add your CSS styles here */
         @media only screen and (max-width: 900px) {
             /* Hide columns on smaller devices */
-            .menu-table th:nth-child(1), .menu-table td:nth-child(1), .menu-table th:nth-child(3),
+            .menu-table th:nth-child(3),
                 .menu-table td:nth-child(3), .menu-table th:nth-child(4), .menu-table td:nth-child(4),
                 .menu-table th:nth-child(5), .menu-table td:nth-child(5), .menu-table th:nth-child(6),
-                .menu-table td:nth-child(6) {
+                .menu-table td:nth-child(6), .menu-table th:nth-child(7), .menu-table td:nth-child(7) {
                 display: none;
             }
         }
@@ -36,6 +35,8 @@
                     <th>Prato Principal</th>
                     <th>Sobremesa</th>
                     <th>Status</th>
+                    <th>Criado em</th>
+                    <th>Atualizado em</th>
                     <th>Excluir</th>
                     <th>Atualizar Status</th>
                 </tr>
@@ -49,6 +50,8 @@
                     <td><%=daoMenuItem.getMenuItemNameById(order.getPratoPrincipalId())%></td>
                     <td><%=daoMenuItem.getMenuItemNameById(order.getSobremesaId())%></td>
                     <td><%=order.getStatus()%></td>
+                    <td><%=formatTimestamp(order.getCreatedAt())%></td>
+                    <td><%=formatTimestamp(order.getUpdatedAt())%></td>
                     <td>
                         <form action="Controller" method="post" onsubmit="return confirmDelete(event)">
                             <input type="hidden" name="action" value="deleteOrder">
@@ -87,7 +90,17 @@
 </body>
 </html>
 
-<%!// Helper method to simplify selected attribute in the dropdown
+<%! // Helper method to format timestamp with date and time
+    private String formatTimestamp(java.sql.Timestamp timestamp) {
+        if (timestamp == null) {
+            return ""; // Handle null timestamps as needed
+        }
+        java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("dd-MM-yyyy HH:mm");
+        return sdf.format(timestamp);
+    }
+
+    // Helper method to simplify selected attribute in the dropdown
     private String selected(String expected, String actual) {
         return expected.equals(actual) ? "selected" : "";
-    }%>
+    }
+%>
