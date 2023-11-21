@@ -177,28 +177,30 @@ public class DAOMenuItem {
 	}
 
 	public List<Order> getOrders() {
+	    List<Order> orders = new ArrayList<>();
 
-		List<Order> orders = new ArrayList<>();
+	    try (Connection con = connect();
+	         PreparedStatement statement = con.prepareStatement("SELECT * FROM orders");
+	         ResultSet rs = statement.executeQuery()) {
 
-		try (Connection con = connect();
-				PreparedStatement statement = con.prepareStatement("SELECT * FROM orders");
-				ResultSet rs = statement.executeQuery()) {
+	        while (rs.next()) {
+	            Order order = new Order(
+	                    rs.getInt("id"),
+	                    rs.getString("customer_name"),
+	                    rs.getInt("entrada_id"),
+	                    rs.getInt("prato_principal_id"),
+	                    rs.getInt("sobremesa_id"),
+	                    rs.getString("status"),
+	                    rs.getTimestamp("created_at"),  
+	                    rs.getTimestamp("updated_at")   
+	            );
+	            orders.add(order);
+	        }
+	    } catch (SQLException e) {
+	        handleSQLException(e);
+	    }
 
-			while (rs.next()) {
-				Order order = new Order(
-						rs.getInt("id"),
-						rs.getString("customer_name"),
-						rs.getInt("entrada_id"),
-						rs.getInt("prato_principal_id"),
-						rs.getInt("sobremesa_id"),
-						rs.getString("status"));
-				orders.add(order);
-			}
-		} catch (SQLException e) {
-			handleSQLException(e);
-		}
-
-		return orders;
+	    return orders;
 	}
 
 	public String getMenuItemNameById(int itemId) {

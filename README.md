@@ -23,7 +23,7 @@ git clone https://github.com/armentanoc/restaurantMenuAndOrdersCRUD.git
 ## Setting up the database and tables
 
 1. You need to create locally at PostgreSQL a database named `VillaEleganza`.
-2. Inside it, run the following query to create the `menu` table: 
+2. Inside it, run the following script in Query Tool to create the `menu` and `orders` table: 
 
 ```bash
 
@@ -40,9 +40,30 @@ CREATE TABLE orders (
     entrada_id INT REFERENCES menu(id),
     prato_principal_id INT REFERENCES menu(id),
     sobremesa_id INT REFERENCES menu(id),
-    status VARCHAR(50) DEFAULT 'pendente'
+    status VARCHAR(50) DEFAULT 'pendente',
+    created_at TIMESTAMPTZ DEFAULT current_timestamp,
+    updated_at TIMESTAMPTZ DEFAULT current_timestamp
 );
 
+CREATE OR REPLACE FUNCTION update_updated_at()
+RETURNS TRIGGER AS $$
+BEGIN
+    NEW.updated_at = NOW();
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+-- Set up trigger to update updated_at on every update
+CREATE TRIGGER orders_update_updated_at
+BEFORE UPDATE ON orders
+FOR EACH ROW
+EXECUTE FUNCTION update_updated_at();
+
+-- Set up trigger to set created_at on insert
+CREATE TRIGGER orders_set_created_at
+BEFORE INSERT ON orders
+FOR EACH ROW
+EXECUTE FUNCTION update_updated_at();
 
 ```
 

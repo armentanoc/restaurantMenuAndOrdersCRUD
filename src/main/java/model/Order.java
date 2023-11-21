@@ -1,5 +1,7 @@
 package model;
 
+import java.sql.Timestamp;
+
 public class Order {
     private int id;
     private String customerName;
@@ -7,14 +9,18 @@ public class Order {
     private int pratoPrincipalId;
     private int sobremesaId;
     private String status;
+    private Timestamp createdAt;
+    private Timestamp updatedAt;
 
-    public Order(int id, String customerName, int entradaId, int pratoPrincipalId, int sobremesaId, String status) {
+    public Order(int id, String customerName, int entradaId, int pratoPrincipalId, int sobremesaId, String status, Timestamp createdAt, Timestamp updatedAt) {
         this.id = id;
         this.customerName = customerName;
         this.entradaId = entradaId;
         this.pratoPrincipalId = pratoPrincipalId;
         this.sobremesaId = sobremesaId;
         this.status = status;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
     }
 
     public int getId() {
@@ -63,5 +69,21 @@ public class Order {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public Timestamp getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(Timestamp createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public Timestamp getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt(Timestamp updatedAt) {
+        this.updatedAt = updatedAt;
     }
 }
