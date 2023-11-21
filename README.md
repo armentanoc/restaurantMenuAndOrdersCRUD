@@ -1,6 +1,8 @@
-# Meal and Restaurant Orders CRUD Application 🍽️
+<h1 align="center"> Meal and Restaurant Orders CRUD Application 🍽️</h1>
 
-![GIT Restaurant Menu CRUD](https://github.com/armentanoc/restaurantMenuAndOrdersCRUD/assets/88147887/6eec41b2-aa37-4c80-81df-9e28071831f9)
+<p align="center">
+  <img src="https://github.com/armentanoc/restaurantMenuAndOrdersCRUD/assets/88147887/49ae87a3-c712-4155-9039-7a940dbd876a" alt="Your Alt Text" style="width: 100%; max-width: 100vw; height: auto;">
+</p>
 
 ## Overview
 This is a Java web application built with JSP (JavaServer Pages) for creating, updating, and deleting (CRUD) meals and restaurant orders. The project uses Apache Tomcat 9 as the web server and PostgreSQL as the embedded database.
@@ -74,5 +76,4 @@ EXECUTE FUNCTION update_updated_at();
 1. Configure the Server in Eclipse IDE >> Servers >> New Server >> Apache Tomcat v9.0 Server >> Browse extracted zip directory. 
 2. Alter the password in `DAOMenuItem.java` class as needed at your own machine 
 3. Open `villaHome.jsp` with Apache Tomcat 9 server
-
-...
+4. The CRUD in `menu` and `orders` should be working!
