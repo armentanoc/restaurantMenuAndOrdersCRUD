@@ -13,7 +13,7 @@ public class DAOMenuItem {
 	private String driver = "org.postgresql.Driver";
 	private String url = "jdbc:postgresql://localhost:5432/VillaEleganza";
 	private String user = "postgres";
-	private String password = "kerous";
+	private String password = "postgres";
 
 	public DAOMenuItem() {
 		try {

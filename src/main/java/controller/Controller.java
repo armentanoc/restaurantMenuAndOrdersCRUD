@@ -16,7 +16,7 @@ import model.DAOMenuItem;
 import model.MenuItem;
 import model.Order;
 
-@WebServlet(urlPatterns = { "/Controller", "/main", "/insert", "/update", "/delete", "/createOrder", "/showOrders"})
+@WebServlet(urlPatterns = { "/Controller", "/main", "/insert", "/update", "/delete", "/createOrder", "/displayOrders"})
 public class Controller extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private DAOMenuItem daoMenuItem;
@@ -53,7 +53,7 @@ public class Controller extends HttpServlet {
                 case "/createOrder":
                     showCreateOrderForm(request, response);
                     break;
-                case "/showOrders":
+                case "/displayOrders":
                     showOrders(request, response);
                     break;
                 default:
@@ -126,8 +126,8 @@ public class Controller extends HttpServlet {
         String ingredients = request.getParameter("ingredients");
         String type = request.getParameter("type");
 
-        MenuItem newMenu = new MenuItem(name, ingredients, type);
-        daoMenuItem.insertMenuItem(newMenu);
+        MenuItem createMenu = new MenuItem(name, ingredients, type);
+        daoMenuItem.insertMenuItem(createMenu);
 
         response.sendRedirect("main");
     }
@@ -230,8 +230,8 @@ public class Controller extends HttpServlet {
         
         List<Order> orders = daoMenuItem.getOrders();
         request.setAttribute("orders", orders);
-        // Forward to the showOrders.jsp page
-        RequestDispatcher dispatcher = request.getRequestDispatcher("showOrders.jsp");
+        // Forward to the displayOrders.jsp page
+        RequestDispatcher dispatcher = request.getRequestDispatcher("displayOrders.jsp");
         dispatcher.forward(request, response);
     }
     
@@ -253,7 +253,7 @@ public class Controller extends HttpServlet {
             handleException(e, "Erro na atualização do status do pedido: " + e.getMessage());
         }
 
-        response.sendRedirect("showOrders");
+        response.sendRedirect("displayOrders");
     }
 
     private void deleteOrder(HttpServletRequest request, HttpServletResponse response)
@@ -268,6 +268,6 @@ public class Controller extends HttpServlet {
             handleException(e, "Erro na exclusão do pedido: " + e.getMessage());
         }
 
-        response.sendRedirect("showOrders");
+        response.sendRedirect("displayOrders");
     }
 }

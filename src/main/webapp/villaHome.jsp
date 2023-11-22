@@ -18,10 +18,10 @@
                     <a href="main" class="option-menu">Cardápio</a>
                 </li>
                  <li>
-                    <a href="newMenu.html" class="option-menu">Inserir prato</a>
+                    <a href="createMenu.html" class="option-menu">Inserir prato</a>
                 </li>
                  <li>
-                    <a href="showOrders" class="option-menu">Pedidos</a>
+                    <a href="displayOrders" class="option-menu">Pedidos</a>
                 </li>
                 <li>
                     <a href="createOrder" class="option-menu">Inserir pedido</a>
