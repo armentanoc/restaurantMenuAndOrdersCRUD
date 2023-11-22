@@ -73,12 +73,13 @@ EXECUTE FUNCTION update_updated_at();
 
 ## Eclipse IDE Configuration
 
-Fire up <a href="https://www.eclipse.org/downloads/packages/release/2023-09/r/eclipse-ide-enterprise-java-and-web-developers">Eclipse IDE for Enterprise Java and Web Developers</a> (or a similar tool) to orchestrate the project. Configure the server, set passwords, and unleash the power of Villa Eleganza in the palm of your hands.
+Fire up <a href="https://www.eclipse.org/downloads/packages/release/2023-09/r/eclipse-ide-enterprise-java-and-web-developers">Eclipse IDE for Enterprise Java and Web Developers</a> (or a similar tool) to orchestrate the project. Configure the server, set passwords, and unleash the power of Villa Eleganza in the palm of your hands. 
 
 ## How to Taste the Magic
 
 1. Configure the Server in Eclipse IDE >> Servers >> New Server >> Apache Tomcat v9.0 Server >> Browse extracted zip directory
 2. Alter the password in `DAOMenuItem.java` class as needed at your own machine
-3. Open `villaHome.jsp` with Apache Tomcat 9 server
-4. The CRUD functionalities for both menu and orders are now at your fingertips
-5. Embark on this flavorful journey with Villa Eleganza – where every byte is a delicious bite! 🌮🍕🍰
+3. If necessary (`The superclass "javax.servlet.http.HttpServlet" was not found on the Java Build Path`), uncheck "validate jsp fragments" under project properties >> validation >> jsp syntax
+4. Open `villaHome.jsp` with Apache Tomcat 9 server
+5. The CRUD functionalities for both menu and orders are now at your fingertips
+6. Embark on this flavorful journey with Villa Eleganza – where every byte is a delicious bite! 🌮🍕🍰
