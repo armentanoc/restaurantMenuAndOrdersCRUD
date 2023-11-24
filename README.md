@@ -1,9 +1,5 @@
 <h1 align="center"> Meal and Restaurant Orders CRUD Application 🍽️</h1>
 
-<p align="center">
-  <img src="https://github.com/armentanoc/restaurantMenuAndOrdersCRUD/assets/88147887/49ae87a3-c712-4155-9039-7a940dbd876a" alt="Your Alt Text" style="width: 100%; max-width: 100vw; height: auto;">
-</p>
-
 ## Overview
 
 Welcome to Villa Eleganza, a Java web application crafted with JSP (JavaServer Pages) that empowers you to manage meals and restaurant orders effortlessly. Whether you're creating, updating, or deleting (CRUD), this application provides a seamless experience. Powered by Apache Tomcat 9 and PostgreSQL, it's a delightful journey into the world of culinary simplicity.
@@ -25,6 +21,10 @@ git clone https://github.com/armentanoc/restaurantMenuAndOrdersCRUD.git
 ```
 
 ## Setting up the Database and Tables
+
+<p align="center">
+  <img src="https://github.com/armentanoc/restaurantMenuAndOrdersCRUD/assets/88147887/88d5ca40-cf8d-4f19-be62-e1e4b8c88bf2" style="width: 100%; max-width: 100vw; height: auto;">
+</p>
 
 1. You need to create locally at PostgreSQL a database named `VillaEleganza`.
 2. Inside it, run the following script in Query Tool to create the `menu` and `orders` table:
@@ -83,3 +83,14 @@ Fire up <a href="https://www.eclipse.org/downloads/packages/release/2023-09/r/ec
 4. Open `villaHome.jsp` with Apache Tomcat 9 server
 5. The CRUD functionalities for both menu and orders are now at your fingertips
 6. Embark on this flavorful journey with Villa Eleganza – where every byte is a delicious bite! 🌮🍕🍰
+
+## CRUD Menu
+<p align="center">
+  <img src="https://github.com/armentanoc/restaurantMenuAndOrdersCRUD/assets/88147887/94ea59ef-4c4c-4c5c-853b-68b0c70ed985" alt="CRUD Menu" style="width: 100%; max-width: 100vw; height: auto;">
+</p>
+
+## CRUD Orders
+
+<p align="center">
+  <img src="https://github.com/armentanoc/restaurantMenuAndOrdersCRUD/assets/88147887/80db9b88-ffca-4e04-a68a-7ecab76d3b93" alt="CRUD Orders" style="width: 100%; max-width: 100vw; height: auto;">
+</p>
